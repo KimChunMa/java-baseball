@@ -25,7 +25,7 @@ public class Number {
         try {
             threeDigitNumber = Integer.parseInt(number);
         } catch (Exception e) {
-            throw new IllegalStateException("잘못된 입력값 입니다!");
+            throw new IllegalArgumentException("잘못된 입력값 입니다!");
         }
         hundreds = threeDigitNumber / 100;
         tends = (threeDigitNumber % 100) / 10;
@@ -34,7 +34,7 @@ public class Number {
 
     private void checkNumber() {
         if (hundreds == tends || tends == ones || hundreds == ones) {
-            throw new IllegalStateException("서로 다른 세자리수가 아닙니다.");
+            throw new IllegalArgumentException("서로 다른 세자리수가 아닙니다.");
         }
     }
 
